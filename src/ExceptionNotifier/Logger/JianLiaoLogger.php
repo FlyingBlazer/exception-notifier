@@ -33,6 +33,7 @@ class JianLiaoLogger
      */
     public function log(\Exception $e)
     {
+        if (is_null($this->url)) return;
         $data = [
             'title' => $e->getMessage(),
             'text' => $e->getTraceAsString()

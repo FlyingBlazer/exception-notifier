@@ -36,6 +36,8 @@ class RollbarLogger
      */
     public function log(\Exception $e)
     {
+        if (is_null($this->config)) return;
+
         $level = Level::error();
         $accessToken = $this->config->getAccessToken();
         $payload = $this->getPayload($accessToken, $level, $e, []);
@@ -62,11 +64,13 @@ class RollbarLogger
      */
     private function __construct()
     {
-        $this->config = new Config([
-            'access_token' => env('ROLLBAR_ACCESS_TOKEN'),
-            'environment' => env('APP_ENV'),
-            'root' => base_path(),
-        ]);
+        if (env('ROLLBAR_ACCESS_TOKEN')) {
+            $this->config = new Config([
+                'access_token' => env('ROLLBAR_ACCESS_TOKEN'),
+                'environment' => env('APP_ENV'),
+                'root' => base_path(),
+            ]);
+        }
     }
 
     /**
