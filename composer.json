@@ -1,0 +1,19 @@
+{
+    "name": "yuzhan/exception-notifier",
+    "description": "Notify exceptions through multiple ways.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "于湛",
+            "email": "me@yuzhan.info"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^5.2",
+        "rollbar/rollbar": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {"ExceptionNotifier\\": "src/ExceptionNotifier"}
+    }
+}
