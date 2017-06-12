@@ -10,8 +10,10 @@
         }
     ],
     "require": {
-        "laravel/framework": "^5.2",
-        "rollbar/rollbar": "^1.0"
+        "rollbar/rollbar": "^1.0",
+        "illuminate/bus": "^5.2",
+        "illuminate/contracts": "^5.2",
+        "illuminate/queue": "^5.2"
     },
     "autoload": {
         "psr-4": {"ExceptionNotifier\\": "src/ExceptionNotifier"}
