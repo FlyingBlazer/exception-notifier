@@ -32,9 +32,9 @@ class RollbarLogger
     }
 
     /**
-     * @param \Exception $e
+     * @param \Throwable $e
      */
-    public function log(\Exception $e)
+    public function log(\Throwable $e)
     {
         if (is_null($this->config)) return;
 
